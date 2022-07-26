@@ -8,9 +8,9 @@ def catalog_reader(file_name):
             dish = line.strip()
             ingredients = []
             for item in range(int(file_obj.readline())):
-                ingredient = file_obj.readline().strip().split(' | ')
-                cook_book_values = {'ingredient_name' : ingredient[0], 'quantity' : int(ingredient[1]), 'measure' : ingredient[2]}
-                ingredients.append(cook_book_values)
+                ingr_dict_values = file_obj.readline().strip().split(' | ')
+                ingr_dict = {'ingredient_name' : ingr_dict_values[0], 'quantity' : int(ingr_dict_values[1]), 'measure' : ingr_dict_values[2]}
+                ingredients.append(ingr_dict)
             cook_book[dish] = ingredients
             file_obj.readline()
         return cook_book
