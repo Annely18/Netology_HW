@@ -34,6 +34,7 @@ print(file_reader(origin_files))
 def file_writer(new_file, dict_):
     with open(new_file, 'a', encoding='utf-8') as file_obj:
         for key, value in dict_.items():
+            print(key)
             str3 = '\n'.join(value[1:])
             file_obj.write(f'{key}\n{value[0]}\n{str3}\n')
 
